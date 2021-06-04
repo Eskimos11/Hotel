@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+    id 'groovy'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+
+
+dependencies {
+    compile project(':exceptions')
+    compile group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
+}

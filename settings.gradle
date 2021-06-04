@@ -1,0 +1,12 @@
+rootProject.name = 'Hotel'
+include 'api'
+include 'model'
+include 'dao'
+include 'services'
+include 'utils'
+include 'controller'
+include 'exceptions'
+include 'annotation'
+include 'dependencyInjection'
+include 'ui'
+

@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'groovy'
+    id 'application'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+
+
+allprojects{
+    apply plugin: 'java'
+    sourceCompatibility = 11
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+
+        compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+        annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+        implementation group: 'log4j', name: 'log4j', version: '1.2.17'
+
+        implementation group: 'org.reflections', name: 'reflections', version: '0.9.12'
+
+        testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+        testCompile 'org.codehaus.groovy:groovy-all:2.4.7'
+        implementation group: 'org.springframework', name: 'spring-core', version: '5.3.5'
+        implementation group: 'org.springframework', name: 'spring-context', version: '5.3.5'
+
+    }
+}
+dependencies{
+    implementation(project("dao"))
+}
+
+test {
+    useJUnitPlatform()
+}
